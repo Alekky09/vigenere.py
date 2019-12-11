@@ -17,32 +17,30 @@ ptxt = get_string("plaintext: ")
 print("ciphertext: ", end = "")
 kpos = 0
 
-for i in ptxt:
+for char in ptxt:
 
     key = key_list[kpos]
 
-    if i.isupper():
-        char = chr((ord(i) + key) % 91)
-
+    if char.isupper():
+        char = chr((ord(char) + key) % 91)
         if char < chr(65):
             char = chr(ord(char) + 65)
-
-        print(char, end = "")
-
+        kpos += 1
 
 
-
-    elif i.islower():
-        char = chr((ord(i) + key) % 123)
+    elif char.islower():
+        char = chr((ord(char) + key) % 123)
         if char < 'a':
             char = chr(ord(char) + 97)
-        print(char, end = "")
-    else:
-        print(i, end = "")
+        kpos += 1
 
-    kpos += 1
+    print(char, end = "")
+
+
+
     if kpos > len(key_word) - 1:
         kpos = 0
+
 print("")
 
 
