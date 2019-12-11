@@ -23,13 +23,13 @@ for char in ptxt:
 
     if char.isupper():
         char = chr((ord(char) + key) % 91)
-        if char < chr(65):
+        if char < 'A':
             char = chr(ord(char) + 65)
         kpos += 1
 
 
     elif char.islower():
-        char = chr((ord(char) + key) % 123)
+        char = chr(ord(char) + key)
         if char < 'a':
             char = chr(ord(char) + 97)
         kpos += 1
