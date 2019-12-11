@@ -22,15 +22,15 @@ for char in ptxt:
     key = key_list[kpos]
 
     if char.isupper():
-        char = chr(ord(char) + key)
-        if char > 'Z':
+        char = chr((ord(char) + key) % 91)
+        if char < 'A':
             char = chr(ord(char) + 65)
         kpos += 1
 
 
     elif char.islower():
-        char = chr(ord(char) + key)
-        if char > 'z':
+        char = chr((ord(char) + key) % 123)
+        if char < 'a':
             char = chr(ord(char) + 97)
         kpos += 1
 
