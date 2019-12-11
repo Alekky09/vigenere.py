@@ -36,8 +36,6 @@ for char in ptxt:
 
     print(char, end = "")
 
-
-
     if kpos > len(key_word) - 1:
         kpos = 0
 
