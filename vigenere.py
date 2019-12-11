@@ -29,7 +29,7 @@ for char in ptxt:
 
 
     elif char.islower():
-        char = chr(ord(char) + key)
+        char = chr((ord(char) + key) % 123)
         if char < 'a':
             char = chr(ord(char) + 97)
         kpos += 1
